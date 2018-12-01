@@ -15,3 +15,11 @@ target_include_directories(BlueWindowTriangle
 	PRIVATE ${GLEW_INCLUDE_DIR})
 
 target_link_libraries(BlueWindowTriangle ${OPENGL_LIBRARIES} ${SDL_LIB} ${GLEW_LIB})
+
+add_executable(RedTriangle src/RedTriangle.cpp)
+
+target_include_directories(RedTriangle 
+	PRIVATE ${SDL_INCLUDE_DIR} 
+	PRIVATE ${GLEW_INCLUDE_DIR})
+
+target_link_libraries(RedTriangle ${OPENGL_LIBRARIES} ${SDL_LIB} ${GLEW_LIB})

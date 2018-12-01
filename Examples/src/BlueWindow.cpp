@@ -4,7 +4,7 @@
 
 int main(int argc, char** argv) {
 	if (SDL_Init(SDL_INIT_EVERYTHING)) {
-		std::cout << "This ain't it chief" << std::endl;
+		std::cout << "Error: " << SDL_GetError() << std::endl;
 	}
 	else {
 		std::cout << "SDL Initialized" << std::endl;
@@ -18,7 +18,6 @@ int main(int argc, char** argv) {
 	GLenum err = glewInit();
 	if (err != GLEW_OK) {
 		fprintf(stderr, "Error: %s\n", glewGetErrorString(err));
-		std::cout << "This also ain't it chief" << std::endl;
 	}
 	else {
 		std::cout << "glew Initialized" << std::endl;
