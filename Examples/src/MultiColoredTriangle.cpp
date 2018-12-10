@@ -7,7 +7,7 @@
 
 ShaderProgram  myProgram;
 GLuint vboId = 0;
-
+GLfloat time = 0.0f;
 
 struct Position {
 	GLfloat x;
@@ -51,8 +51,20 @@ void draw() {
 	glBindBuffer(GL_ARRAY_BUFFER, vboId);
 	
 	//get our attribute locations
-	GLuint attribPos = glGetAttribLocation(program, "in_Position");
-	GLuint attribColor = glGetAttribLocation(program, "in_Color");
+	GLint attribPos = glGetAttribLocation(program, "in_Position");
+	if (attribPos == -1) {
+		std::cout << "Position not found!" << std::endl;
+	}
+
+	GLint attribColor = glGetAttribLocation(program, "in_Color");
+	if (attribColor == -1) {
+		std::cout << "Color not found!" << std::endl;
+	}
+
+	GLint uniformTime = glGetUniformLocation(program, "time");
+	if (uniformTime != -1) {
+		glUniform1fv(uniformTime, 1, &time);
+	}
 
 	//enable our OpenGL attributes
 	glEnableVertexAttribArray(attribPos);
@@ -117,6 +129,8 @@ int main(int argc, char** argv) {
 				shouldQuit = true;
 		}
 
+		time += 0.001f;
+		
 		SDL_GL_SwapWindow(window);
 	}
 
