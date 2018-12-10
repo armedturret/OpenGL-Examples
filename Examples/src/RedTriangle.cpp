@@ -23,6 +23,8 @@ int main(int argc, char** argv) {
 		std::cout << "glew Initialized" << std::endl;
 	}
 
+	std::cout << "OpenGL version: " << (char*)(glGetString(GL_VERSION)) << std::endl;
+
 	bool shouldQuit = false;
 	while (!shouldQuit) {
 		glClearColor(0.0f, 0.0f, 1.0f, 1.0f);

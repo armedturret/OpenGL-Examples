@@ -8,6 +8,9 @@ public:
 
 	int compileShadersFromFile(std::string vertexShader, std::string fragmentShader);
 
+	GLuint getProgram() const { return m_program; }
+
+	void destroy();
 
 private:
 	std::string getFileContents(std::string fileName);

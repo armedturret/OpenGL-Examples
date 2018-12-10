@@ -22,6 +22,8 @@ int main(int argc, char** argv) {
 	else {
 		std::cout << "glew Initialized" << std::endl;
 	}
+
+	std::cout << "OpenGL version: " << (char*)(glGetString(GL_VERSION)) << std::endl;
 	
 	bool shouldQuit = false;
 	while (!shouldQuit) {

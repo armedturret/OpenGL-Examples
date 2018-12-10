@@ -46,10 +46,15 @@ int ShaderProgram::compileShadersFromFile(std::string vertexShader, std::string 
 		// Use the infoLog as you see fit.
 		std::cout << "Program link failed: " << s << std::endl;
 		// In this simple program, we'll just leave
-		return;
+		return 1;
 	}
 	
 	return 0;
+}
+
+void ShaderProgram::destroy()
+{
+	glDeleteProgram(m_program);
 }
 
 std::string ShaderProgram::getFileContents(std::string fileName)
@@ -58,12 +63,14 @@ std::string ShaderProgram::getFileContents(std::string fileName)
 	std::ifstream t;
 	t.open(fileName, std::ios::in | std::ios::binary);
 
-	t.seekg(0, std::ios::end);
-	str.reserve(t.tellg());
-	t.seekg(0, std::ios::beg);
+	if (t.is_open()) {
+		t.seekg(0, std::ios::end);
+		str.reserve(t.tellg());
+		t.seekg(0, std::ios::beg);
 
-	str.assign((std::istreambuf_iterator<char>(t)),
-		std::istreambuf_iterator<char>());
+		str.assign((std::istreambuf_iterator<char>(t)),
+			std::istreambuf_iterator<char>());
+	}
 
 	return str;
 }
