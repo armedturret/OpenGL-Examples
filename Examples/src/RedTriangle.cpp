@@ -10,7 +10,7 @@ int main(int argc, char** argv) {
 		std::cout << "SDL Initialized" << std::endl;
 	}
 
-	SDL_Window *window = SDL_CreateWindow("Triangles are a Thing", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_OPENGL);
+	SDL_Window *window = SDL_CreateWindow("Hey, it\'s red now!", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_OPENGL);
 
 	SDL_GL_CreateContext(window);
 

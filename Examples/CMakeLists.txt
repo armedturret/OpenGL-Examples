@@ -19,3 +19,10 @@ target_link_libraries(MultiColoredTriangle PRIVATE SDL2::SDL2 SDL2::SDL2main GLE
 
 configure_file(glsl/multicoloredtriangle.frag ${CMAKE_BINARY_DIR}/Examples/multicoloredtriangle.frag COPYONLY)
 configure_file(glsl/multicoloredtriangle.vert ${CMAKE_BINARY_DIR}/Examples/multicoloredtriangle.vert COPYONLY)
+
+add_executable(MovingTriangle src/MovingTriangle.cpp src/GlslCompiler.cpp)
+
+target_link_libraries(MovingTriangle PRIVATE SDL2::SDL2 SDL2::SDL2main GLEW::GLEW ${OPENGL_LIBRARIES})
+
+configure_file(glsl/movingshape.frag ${CMAKE_BINARY_DIR}/Examples/movingshape.frag COPYONLY)
+configure_file(glsl/movingshape.vert ${CMAKE_BINARY_DIR}/Examples/movingshape.vert COPYONLY)
