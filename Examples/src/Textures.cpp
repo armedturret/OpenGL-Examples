@@ -171,7 +171,7 @@ int main(int argc, char** argv) {
 	std::cout << "OpenGL version: " << (char*)(glGetString(GL_VERSION)) << std::endl;
 
 	//flip images to fix UV glitch
-	//stbi_set_flip_vertically_on_load(true);
+	stbi_set_flip_vertically_on_load(true);
 
 	//generate the texture
 	glGenTextures(1, &textureId);

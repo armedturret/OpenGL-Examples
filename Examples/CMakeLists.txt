@@ -34,3 +34,9 @@ target_link_libraries(Textures PRIVATE SDL2::SDL2 SDL2::SDL2main GLEW::GLEW ${OP
 configure_file(glsl/textures.frag ${CMAKE_BINARY_DIR}/Examples/textures.frag COPYONLY)
 configure_file(glsl/textures.vert ${CMAKE_BINARY_DIR}/Examples/textures.vert COPYONLY)
 configure_file(textures/Floor.png ${CMAKE_BINARY_DIR}/Examples/Floor.png COPYONLY)
+
+add_executable(Animation src/Animation.cpp src/GlslCompiler.cpp)
+
+target_link_libraries(Animation PRIVATE SDL2::SDL2 SDL2::SDL2main GLEW::GLEW ${OPENGL_LIBRARIES})
+
+configure_file(textures/Mage.png ${CMAKE_BINARY_DIR}/Examples/Mage.png COPYONLY)
