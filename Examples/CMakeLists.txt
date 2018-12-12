@@ -26,3 +26,11 @@ target_link_libraries(MovingTriangle PRIVATE SDL2::SDL2 SDL2::SDL2main GLEW::GLE
 
 configure_file(glsl/movingshape.frag ${CMAKE_BINARY_DIR}/Examples/movingshape.frag COPYONLY)
 configure_file(glsl/movingshape.vert ${CMAKE_BINARY_DIR}/Examples/movingshape.vert COPYONLY)
+
+add_executable(Textures src/Textures.cpp src/GlslCompiler.cpp)
+
+target_link_libraries(Textures PRIVATE SDL2::SDL2 SDL2::SDL2main GLEW::GLEW ${OPENGL_LIBRARIES})
+
+configure_file(glsl/textures.frag ${CMAKE_BINARY_DIR}/Examples/textures.frag COPYONLY)
+configure_file(glsl/textures.vert ${CMAKE_BINARY_DIR}/Examples/textures.vert COPYONLY)
+configure_file(textures/Floor.png ${CMAKE_BINARY_DIR}/Examples/Floor.png COPYONLY)
