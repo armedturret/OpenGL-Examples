@@ -114,6 +114,8 @@ void draw() {
 	glm::mat4 mvp = projectionMatrix * viewMatrix * modelMatrix;
 	glUniformMatrix4fv(uniformMVP, 1, GL_FALSE, glm::value_ptr(mvp));
 
+	glUniform1i(uniformSampler, 0);
+
 	//set our active texture
 	glActiveTexture(GL_TEXTURE0);
 
@@ -134,8 +136,8 @@ void draw() {
 	glDrawArrays(GL_TRIANGLES, 0, 6);
 
 	//disable the attributes
-	glEnableVertexAttribArray(attribPos);
-	glEnableVertexAttribArray(attribColor);
+	glDisableVertexAttribArray(attribPos);
+	glDisableVertexAttribArray(attribColor);
 	glDisableVertexAttribArray(attribUV);
 
 	//clear binds

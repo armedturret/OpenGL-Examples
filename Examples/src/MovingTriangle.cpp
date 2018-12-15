@@ -99,8 +99,8 @@ void draw() {
 	glDrawArrays(GL_TRIANGLES, 0, 3);
 
 	//disable the attributes
-	glEnableVertexAttribArray(attribPos);
-	glEnableVertexAttribArray(attribColor);
+	glDisableVertexAttribArray(attribPos);
+	glDisableVertexAttribArray(attribColor);
 
 	//clear binds
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
