@@ -33,9 +33,9 @@ int main(int argc, char** argv) {
 		glBegin(GL_TRIANGLES);
 
 		glColor3f(1.0f, 0.0f, 0.0f);
-		glVertex2f(1.0f, 1.0f);
-		glVertex2f(0.0f, 0.0f);
-		glVertex2f(0.0f, 1.0f);
+		glVertex2d(1.0, 0.0);
+		glVertex2d(0.0, 0.0);
+		glVertex2d(0.5, 1.0);
 
 		glEnd();
 

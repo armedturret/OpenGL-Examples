@@ -29,9 +29,9 @@ int main(int argc, char** argv) {
 
 		glBegin(GL_TRIANGLES);
 		
-		glVertex2d(1.0, 1.0);
+		glVertex2d(1.0, 0.0);
 		glVertex2d(0.0, 0.0);
-		glVertex2d(0.0, 1.0);
+		glVertex2d(0.5, 1.0);
 
 		glEnd();
 		
